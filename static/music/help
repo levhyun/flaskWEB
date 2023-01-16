@@ -1,0 +1,5 @@
+[배경음악을 사용법]
+1. GITHUB저장소에 README.md 파일에 구글드라이브 링크로 이동하여 노래를 다운로드 한다.
+link : https://github.com/levhyun/flaskWEB/blob/main/README.md
+주의 : 절대 다운받은 노래 파일명을 변경하면 안된다.
+2. 다운받은 노래를 static/music 폴더 안에 이동시킨다.
