@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    </head>
+    <body>
+        <audio id="audio" autoplay loop">
+            <source src="{{ url_for('static', filename='music/christmas.mp3') }}">
+        </audio>
+        <script>
+            var audio = document.getElementById("audio");
+            audio.volume = 0.2;
+        </script> 
+        <div class="container">
+            <div class="header">
+                <h1><a href="/">JAHYUN</a></h1>
+                <div class="nav">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/clock">CLOCK</a></li>
+                        <li><a href="/smile">SMILE</a></li>
+                        <li><a href="/dots">DOTS</a></li>
+                        <li><a href="/404">404</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hero">
+                <h2>WELCOME TO MY WEBSITE</h2>
+                <p>이 웹사이트는 재밌는 경험을 할수 있는 웹 사이트입니다.<br>
+                    MAIN 페이지에서는 눈이 내리는 예쁜 야경과 감미로운 크리스마스 배경음악이 깔려있습니다.<br>
+                    노래를 재생하려면 상단 우측에 HOME버튼을 클락하거나 상단 좌측에 LOGO인 JAHYUN을 클릭하십시오.<br>
+                    SMILE 페이지는 클릭요소가 들어간 귀여운 스마일 이모티콘과 네온색으로 색다른 경험을 하실 수 있습니다.<br>
+                    404 페이지는 무한 동력의 구가 404 페이지를 꾸며준 색다른 에러페이지를 경험하실 수 있습니다.<br>
+                    DOTS 페이지는 마우스포인터를 따라다니는 네온색의 원들을 경험하실 수 있습니다.<br>
+                    CLOCK 페이지는 예쁜 시계를 볼수 있습니다.
+                </p>
+                <button>LIKE</button>
+            </div>
+        </div>
+        <div class="snow-wrapper" ref="wrapper">
+            <transition-group @before-enter="beforeEnter">
+                <div class="snow" :class="{falling:play}" v-for="(snow, index) in snowUnits" :key="index"></div>
+            </transition-group>
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </body>
+</html>

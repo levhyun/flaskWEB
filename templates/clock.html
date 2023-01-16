@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clock.css') }}">
+    <title>Clock Page</title>
+</head>
+<body>
+    <audio id="audio" autoplay loop">
+        <source src="{{ url_for('static', filename='music/christmas.mp3') }}">
+    </audio>
+    <script>
+        var audio = document.getElementById("audio");
+        audio.volume = 0.2;
+    </script> 
+    <div id="time">
+        <div class="circle" style="--clr:#0022ff">
+            <div class="dots hr_dot"></div>
+            <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70" id="hh"></circle>
+            </svg>
+            <div id="hours">00</div>
+        </div>
+        <div class="circle" style="--clr:#8800ff">
+            <div class="dots min_dot"></div>
+            <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70" id="mm"></circle>
+            </svg>
+            <div id="minutes">00</div>
+        </div>
+        <div class="circle" style="--clr:#f700ff">
+            <div class="dots sec_dot"></div>
+            <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70" id="ss"></circle>
+            </svg>
+            <div id="seconds">00</div>
+        </div>
+        <div class="ap">
+            <div id="ampm">AM</div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/clock.js') }}"></script>
+</body>
+</html>
